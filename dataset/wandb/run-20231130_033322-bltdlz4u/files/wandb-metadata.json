@@ -1,0 +1,54 @@
+{
+    "os": "Windows-10-10.0.22621-SP0",
+    "python": "3.10.0",
+    "heartbeatAt": "2023-11-30T00:33:23.063016",
+    "startedAt": "2023-11-30T00:33:22.228632",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "detect",
+        "train",
+        "data=data.yaml",
+        "model=yolov8n.yaml",
+        "pretrained=yolov8n.pt",
+        "epochs=100",
+        "imgsz=640"
+    ],
+    "state": "running",
+    "program": "-m __main__",
+    "codePathLocal": null,
+    "host": "DESKTOP-NA1C1F2",
+    "username": "omera",
+    "executable": "C:\\Users\\omera\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 2592.0,
+        "min": 0.0,
+        "max": 2592.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2592.0,
+            "min": 0.0,
+            "max": 2592.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 475.5376625061035,
+            "used": 310.03771209716797
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 2070",
+            "memory_total": 8589934592
+        }
+    ],
+    "memory": {
+        "total": 15.839054107666016
+    }
+}

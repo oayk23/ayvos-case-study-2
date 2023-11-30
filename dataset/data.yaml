@@ -1,0 +1,13 @@
+train: C:\Users\omera\Desktop\ayvos\dataset\train\images
+val: C:\Users\omera\Desktop\ayvos\dataset\valid\images
+test: C:/Users/omera/Desktop/ayvos/dataset/test/images
+
+nc: 4
+names: ["comelen-insan", "insan", "kosan-insan", "yatan-insan"]
+
+roboflow:
+  workspace: robotaksi
+  project: insan2
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/robotaksi/insan2/dataset/1
