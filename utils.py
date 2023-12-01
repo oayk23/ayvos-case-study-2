@@ -57,7 +57,7 @@ def yatma_hesapla(sol_dirsek,sol_omuz,sol_bel,sol_diz,sol_bilek,sag_dirsek,sag_o
         sag_bacak3 = math.dist(sag_bel,sag_bilek)
         aci_sag_bacak = math.degrees(math.acos((sag_bacak1*sag_bacak1+sag_bacak2*sag_bacak2-sag_bacak3*sag_bacak3)/(2*sag_bacak1*sag_bacak2)))
 
-        if (((aci_sol_omuz>30 and aci_sol_omuz<120) or (aci_sag_omuz<120 and aci_sag_omuz>30))) and (((aci_sag_bacak>90 and aci_sag_bacak<=180) and (aci_sol_bacak<=180 and aci_sag_bacak>90))):
+        if (((aci_sol_omuz>30 and aci_sol_omuz<120) or (aci_sag_omuz<120 and aci_sag_omuz>30))) and (((aci_sag_bacak>90 and aci_sag_bacak<=180) or (aci_sol_bacak<=180 and aci_sag_bacak>90))):
             return True
         else:
             return False

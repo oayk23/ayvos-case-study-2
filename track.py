@@ -92,10 +92,10 @@ class PoseEstimator:
                         sag_omuz = keypoint.xy.cpu()[0][SAG_OMUZ]
                         if comelme_hesapla(sol_bilek=sol_bilek,sol_diz=sol_diz,sol_bel=sol_bel,sag_bilek=sag_bilek,sag_bel=sag_bel,sag_diz=sag_diz,sol_omuz=sol_omuz,sag_omuz=sag_omuz):
                             cv2.putText(annotated_frame,"comelme",(int(x),int(y+20)),cv2.FONT_HERSHEY_COMPLEX,1,(230,230,230),1)
-                        elif kosma_hesapla(sol_el=sol_el,sol_dirsek=sol_dirsek,sol_omuz=sol_omuz,sag_bel=sag_bel,sag_bilek=sag_bilek,sag_dirsek=sag_dirsek,sag_diz=sag_diz,sag_el=sag_el,sag_omuz=sag_omuz,sol_bel=sol_bel,sol_bilek=sol_bilek,sol_diz=sol_diz):
-                            cv2.putText(annotated_frame,"kosma",(int(x),int(y+20)),cv2.FONT_HERSHEY_COMPLEX,1,(230,230,230),1)
                         elif yatma_hesapla(sol_dirsek=sol_dirsek,sol_omuz=sol_omuz,sol_bel=sol_bel,sag_bel=sag_bel,sag_bilek=sag_bilek,sag_dirsek=sag_dirsek,sag_diz=sag_diz,sag_omuz=sag_omuz,sol_bilek=sol_bilek,sol_diz=sol_diz):
                             cv2.putText(annotated_frame,"yatma",(int(x),int(y+20)),cv2.FONT_HERSHEY_COMPLEX,1,(230,230,230),1)
+                        elif kosma_hesapla(sol_el=sol_el,sol_dirsek=sol_dirsek,sol_omuz=sol_omuz,sag_bel=sag_bel,sag_bilek=sag_bilek,sag_dirsek=sag_dirsek,sag_diz=sag_diz,sag_el=sag_el,sag_omuz=sag_omuz,sol_bel=sol_bel,sol_bilek=sol_bilek,sol_diz=sol_diz):
+                            cv2.putText(annotated_frame,"kosma",(int(x),int(y+20)),cv2.FONT_HERSHEY_COMPLEX,1,(230,230,230),1)
                         else:
                             cv2.putText(annotated_frame,"hicbirsey yapmiyor.",(int(x),int(y+20)),cv2.FONT_HERSHEY_COMPLEX,1,(230,230,230),1)
                         duration = (frame_count_first[track_id]-frame_count_last[track_id])/30
@@ -118,5 +118,5 @@ class PoseEstimator:
 
 if __name__ == '__main__':
     pose_estimator = PoseEstimator()
-    video_path = r"fainting_videos\Denmark official faints during Covid-19 conference.mp4"
-    pose_estimator.detect_video(video_path=video_path)
+    video_path = r"fainting_videos\vlc-record-2023-11-27-14h07m42s-SOKAK ORTASINDA BAYILMA ŞAKASI(Sosyal Deney)!!!.mp4-.mp4"
+    pose_estimator.detect_video(video_path=video_path,output_path="test5.mp4")
