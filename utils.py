@@ -15,14 +15,14 @@ SAG_DIZ = 14
 
 def comelme_hesapla(sol_bilek,sol_diz,sol_bel,sag_bilek,sag_diz,sag_bel,sag_omuz,sol_omuz):
     try:
-        sol1 = math.dist(sol_bilek,sol_diz)
-        sol2 = math.dist(sol_diz,sol_bel)
-        sol3 = math.dist(sol_bel,sol_bilek)
-        aci_sol = math.degrees(math.acos((sol1*sol1+sol2*sol2-sol3*sol3)/(2*sol1*sol2)))
-        sag1 = math.dist(sag_bilek,sag_diz)
-        sag2 = math.dist(sag_diz,sag_bel)
-        sag3 = math.dist(sag_bel,sag_bilek)
-        aci_sag = math.degrees(math.acos((sag1*sag1+sag2*sag2-sag3*sag3)/(2*sag1*sag2)))
+        #sol1 = math.dist(sol_bilek,sol_diz)
+        #sol2 = math.dist(sol_diz,sol_bel)
+        #sol3 = math.dist(sol_bel,sol_bilek)
+        #aci_sol = math.degrees(math.acos((sol1*sol1+sol2*sol2-sol3*sol3)/(2*sol1*sol2)))
+        #sag1 = math.dist(sag_bilek,sag_diz)
+        #sag2 = math.dist(sag_diz,sag_bel)
+        #sag3 = math.dist(sag_bel,sag_bilek)
+        #aci_sag = math.degrees(math.acos((sag1*sag1+sag2*sag2-sag3*sag3)/(2*sag1*sag2)))
         sag_bel1 = math.dist(sag_omuz,sag_bel)
         sag_bel2 = math.dist(sag_bel,sag_diz)
         sag_bel3 = math.dist(sag_diz,sag_omuz)
@@ -31,7 +31,7 @@ def comelme_hesapla(sol_bilek,sol_diz,sol_bel,sag_bilek,sag_diz,sag_bel,sag_omuz
         sol_bel2 = math.dist(sol_bel,sol_diz)
         sol_bel3 = math.dist(sol_diz,sol_omuz)
         aci_sol_bel = math.degrees(math.acos((sol_bel1*sol_bel1+sol_bel2*sol_bel2-sol_bel3*sol_bel3)/(2*sol_bel1*sol_bel2)))
-        if (aci_sol<90 and aci_sag<90) or (aci_sag_bel<90 and aci_sol_bel<90):
+        if (aci_sag_bel<90 and aci_sol_bel<90):
             return True
         else:
             return False
@@ -57,7 +57,7 @@ def yatma_hesapla(sol_dirsek,sol_omuz,sol_bel,sol_diz,sol_bilek,sag_dirsek,sag_o
         sag_bacak3 = math.dist(sag_bel,sag_bilek)
         aci_sag_bacak = math.degrees(math.acos((sag_bacak1*sag_bacak1+sag_bacak2*sag_bacak2-sag_bacak3*sag_bacak3)/(2*sag_bacak1*sag_bacak2)))
 
-        if (((aci_sol_omuz>30 and aci_sol_omuz<120) or (aci_sag_omuz<120 and aci_sag_omuz>30))) and (((aci_sag_bacak>90 and aci_sag_bacak<=180) or (aci_sol_bacak<=180 and aci_sag_bacak>90))):
+        if (((aci_sol_omuz>30 and aci_sol_omuz<120) and (aci_sag_omuz<120 and aci_sag_omuz>30))) and (((aci_sag_bacak>90 and aci_sag_bacak<=180) and (aci_sol_bacak<=180 and aci_sag_bacak>90))):
             return True
         else:
             return False
@@ -82,7 +82,7 @@ def kosma_hesapla(sol_el,sol_dirsek,sol_omuz,sag_el,sag_dirsek,sag_omuz,sol_bile
         sol_bacak2 = math.dist(sol_diz,sol_bel)
         sol_bacak3 = math.dist(sol_bel,sol_bilek)
         aci_sol_bacak = math.degrees(math.acos((sol_bacak1*sol_bacak1+sol_bacak2*sol_bacak2-sol_bacak3*sol_bacak3)/(2*sol_bacak1*sol_bacak2)))
-        if (aci_sol_el<180 and aci_sag_el<180) and ((aci_sag_bacak>90 and aci_sag_bacak<180) or (aci_sol_bacak>90 and aci_sol_bacak<180)):
+        if (aci_sol_el<120 and aci_sag_el<120) and ((aci_sag_bacak>90 and aci_sag_bacak<180) or (aci_sol_bacak>90 and aci_sol_bacak<180)):
             return True
         else:
             return False
